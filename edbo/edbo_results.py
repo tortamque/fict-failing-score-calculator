@@ -68,7 +68,9 @@ def get_result_121():
     all_121_2, kvota1_121_2, kvota2_121_2 = calculate(2, "121", statements_121)
 
     result = f"""
-    Непрохідні бали станом на {datetime.now().strftime("%d.%m.%y %H:%M")}
+Інформація про <b>121</b> спеціальність
+
+Непрохідні бали станом на {datetime.now().strftime("%d.%m.%y %H:%M")}
 
 <b>Тільки перший пріоритет!</b>
     Всі вступники: {all_121_1}
@@ -93,7 +95,9 @@ def get_result_123():
     all_123_2, kvota1_123_2, kvota2_123_2 = calculate(2, "123", statements_123)
 
     result = f"""
-    Непрохідні бали станом на {datetime.now().strftime("%d.%m.%y %H:%M")}
+Інформація про <b>123</b> спеціальність
+
+Непрохідні бали станом на {datetime.now().strftime("%d.%m.%y %H:%M")}
 
 <b>Тільки перший пріоритет!</b>
     Всі вступники: {all_123_1}
@@ -119,7 +123,9 @@ def get_result_126():
     all_126_2, kvota1_126_2, kvota2_126_2 = calculate(2, "126", statements_126)
 
     result = f"""
-    Непрохідні бали станом на {datetime.now().strftime("%d.%m.%y %H:%M")}
+Інформація про <b>126</b> спеціальність
+    
+Непрохідні бали станом на {datetime.now().strftime("%d.%m.%y %H:%M")}
 
 <b>Тільки перший пріоритет!</b>
     Всі вступники: {all_126_1}
