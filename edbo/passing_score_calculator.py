@@ -21,7 +21,7 @@ def calculate_last_person(priority: int, positions_count: int, statements):
         if statement.get_priority() <= priority and statement.get_priority() >= 1 and len(passing_score_statements) < positions_count:
             passing_score_statements.append(statement)
 
-    if len(passing_score_statements) > 1:
+    if len(passing_score_statements) >= 1:
         last_person = passing_score_statements[-1]
         return last_person
     else:
