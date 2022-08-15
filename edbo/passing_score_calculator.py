@@ -22,9 +22,6 @@ def get_not_kvota_only_statements(all_statements, speciality_number: str):
 
     statements_all = sorted(statements_all, key=lambda _statement: _statement.get_kb(), reverse=True)
 
-    for i in statements_all:
-        print(i)
-
     return statements_all
 
 
