@@ -4,7 +4,7 @@ from classes.statement import Statement
 import requests
 
 
-def parse_all_statements(speciality_number: int):
+def parse_all_statements(speciality_number: str):
     statements_json = []
     counter = 0
 
@@ -21,6 +21,9 @@ def parse_all_statements(speciality_number: int):
             break
 
         statements_json.extend(response_json["requests"])
+
+        if counter == 1000:
+            break
 
         counter += 200
 
@@ -52,7 +55,7 @@ def parse_statement_objects(statements_json):
     return statements
 
 
-def parse(speciality_number: int):
+def parse(speciality_number: str):
     statements_json = parse_all_statements(speciality_number)
     statements = parse_statement_objects(statements_json)
 

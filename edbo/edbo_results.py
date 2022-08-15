@@ -5,9 +5,9 @@ from datetime import datetime
 
 
 def get_result():
-    statements_121 = parse(121)
-    statements_123 = parse(123)
-    statements_126 = parse(126)
+    statements_121 = parse("121")
+    statements_123 = parse("123")
+    statements_126 = parse("126")
 
     #1 приоритет
     all_121_1, kvota1_121_1, kvota2_121_1 = calculate(1, "121", statements_121)
@@ -59,7 +59,7 @@ def get_result():
 
 
 def get_result_121():
-    statements_121 = parse(121)
+    statements_121 = parse("121")
 
     # 1 приоритет
     all_121_1, kvota1_121_1, kvota2_121_1 = calculate(1, "121", statements_121)
@@ -86,7 +86,7 @@ def get_result_121():
 
 
 def get_result_123():
-    statements_123 = parse(123)
+    statements_123 = parse("123")
 
     # 1 приоритет
     all_123_1, kvota1_123_1, kvota2_123_1 = calculate(1, "123", statements_123)
@@ -104,7 +104,6 @@ def get_result_123():
     Тільки квота-1: {kvota1_123_1}
     Тільки квота-2: {kvota2_123_1}
 
-
 <b>Перший і другий пріоритети!</b>
     Всі вступники: {all_123_2}
     Тільки квота-1: {kvota1_123_2}
@@ -114,7 +113,7 @@ def get_result_123():
 
 
 def get_result_126():
-    statements_126 = parse(126)
+    statements_126 = parse("126")
 
     # 1 приоритет
     all_126_1, kvota1_126_1, kvota2_126_1 = calculate(1, "126", statements_126)
@@ -132,10 +131,36 @@ def get_result_126():
     Тільки квота-1: {kvota1_126_1}
     Тільки квота-2: {kvota2_126_1}
 
-
 <b>Перший і другий пріоритети!</b>
     Всі вступники: {all_126_2}
     Тільки квота-1: {kvota1_126_2}
     Тільки квота-2: {kvota2_126_2}"""
+
+    return result
+
+
+def get_result_121_zaochka():
+    statements_121_zaochka = parse("121_zaochka")
+
+    # 1 приоритет
+    all_121_zaochka_1, kvota1_121_zaochka_1, kvota2_121_zaochka_1 = calculate(1, "121_zaochka", statements_121_zaochka)
+
+    # 1 и 2 приоритеты
+    all_121_zaochka_2, kvota1_121_zaochka_2, kvota2_121_zaochka_2 = calculate(2, "121_zaochka", statements_121_zaochka)
+
+    result = f"""
+Інформація про <b>121</b> спеціальність <b>(заочна форма навчання)</b>
+
+Непрохідні бали станом на {datetime.now().strftime("%d.%m.%y %H:%M")}
+
+<b>Тільки перший пріоритет!</b>
+    Всі вступники: {all_121_zaochka_1}
+    Тільки квота-1: {kvota1_121_zaochka_1}
+    Тільки квота-2: {kvota2_121_zaochka_1}
+
+<b>Перший і другий пріоритети!</b>
+    Всі вступники: {all_121_zaochka_2}
+    Тільки квота-1: {kvota1_121_zaochka_2}
+    Тільки квота-2: {kvota2_121_zaochka_2}"""
 
     return result

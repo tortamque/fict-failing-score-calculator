@@ -31,3 +31,9 @@ def calculate_126(client, message):
 
     message.reply_text(text=result, reply_to_message_id=message.id)
 
+
+@app.on_message(filters.command(["121_zaochka", "121_zaochka@edbo_fict_bot"]))
+def calculate_126(client, message):
+    result = get_result_121_zaochka()
+
+    message.reply_text(text=result, reply_to_message_id=message.id)
