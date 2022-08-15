@@ -47,11 +47,17 @@ def cut_reduntant_priority(priority: int, statements):
     return clipped_statements
 
 
-def calculate_last_person(priority: int, positions_count: int, statements):
+def calculate_last_person(priority: int, positions_count: int, statements, kvota: int, speciality_number: str):
     clipped_statements = cut_reduntant_priority(priority, statements)
 
+    kvota1_positions_count = positions_count_config[speciality_number]["kvota1"]
+    kvota2_positions_count = positions_count_config[speciality_number]["kvota2"]
+
     if len(clipped_statements) >= positions_count:
-        last_person = clipped_statements[positions_count-1]
+        if kvota == 0:
+            last_person = clipped_statements[positions_count - kvota1_positions_count - kvota2_positions_count - 1]
+        else:
+            last_person = clipped_statements[positions_count - 1]
 
         return last_person
     elif len(clipped_statements) == 0:
@@ -73,7 +79,7 @@ def calculate_passing_score_person(priority: int, positions_count: int, statemen
         # заявления только с квотами
         statements = get_kvota_only_statements(kvota, statements)
 
-    last_person = calculate_last_person(priority, positions_count, statements)
+    last_person = calculate_last_person(priority, positions_count, statements, kvota, speciality_number)
 
     return last_person
 
